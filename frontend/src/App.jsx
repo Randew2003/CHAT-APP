@@ -11,6 +11,16 @@ import ProfilePage from './pages/ProfilePage'
 import { Routes, Route } from 'react-router-dom'
 
 const App = () => {
+
+  const { authUser, checkAuth } = useAuthStore();
+
+  useEffect(() => {
+    checkAuth();
+  }, [checkAuth]);
+
+  console.log({authUser});
+  
+
   return (
     <div >
       <Navbar />
